@@ -52,6 +52,7 @@ updated: 2022-10-09
 |`<svg>`| SVG is used to define vector-based graphics for the Web|` <svg width="100" height="100"><circle cx="50" cy="50" r="40" stroke="green"/> </svg> `|
 |`<iframe>`| It is used to specifies an inline frame. |` <iframe src=" https://onecompiler.com/" title="iframe element"></iframe> `|
 |`<progress>`| It represents the completion progress of a task. |` <progress id="file" value="32" max="100"> 32% </progress> `|
+|`<address>`| It defines contact information for the author/owner of a document. |` <address> You can contact us at: 123 Somewhere St. City, State</address> `|
 
 ## HTML formatting 
 
@@ -70,6 +71,7 @@ updated: 2022-10-09
 |`<sup>..</sup>` | Superscript text|
 |`<big>..</big>` | Larger text|
 |`<kbd>..</kbd>` | keyboard input text|
+|`<bdo>..</bdo>` | bidirectional override text|
 
 ## Tables
 
@@ -171,6 +173,10 @@ List the entries like in a dictionary or encyclopedia.
 | `<input type = "reset">`| To define a reset button|
 | `<input type = "email">`| To define a single-line email input field|
 | `<input type = "datetime-local">`| To define a single-line Date and time input field|
+| `<input type="tel">`| To define a telephone number. |
+| `<input type="url">`| To define a URL address. |
+| `<input type="week">`| To define a selection of week & year. |
+| `<input type="image">`| To take image format as an input. |
 
 ```html
  <form >

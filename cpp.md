@@ -88,10 +88,19 @@ It contain many fuctions:
 begin(),end(),sort(),length() and many more
 ### Example:
 ```c
-string s="abcde";
-cout<<s[2];      //prints c
-sort(s.begin(),s.end());    
-s.length();
+string s="abcde";               // string declaration
+cout<<s[2];                     // prints c
+sort(s.begin(),s.end());        // sorts the given string
+s.length();                     // returns the length of the string
+#include <string>               // Include string (std namespace)
+s1.size(), s2.size();           // Number of characters: 0, 5
+s1 += s2 + ' ' + "world";       // Concatenation
+s1 == "hello world"             // Comparison, also <, >, !=, etc.
+s1.substr(m, n);                // Substring of size n starting at s1[m]
+s1.c_str();                     // Convert to const char*
+s1 = to_string(12.05);          // Converts number to string
+getline(cin, s);                // Read line ending in '\n'
+string string1.append(string2); // It is used to concatenate two strings(string1 and string2 are two string names)
 ```
 
 ## Literals or Constants
@@ -100,6 +109,10 @@ s.length();
 |Integer Literal- decimal|255|
 |Integer Literal- octal|0377|
 |Integer Literal- hexadecimal|0xFF|
+|Integer Literal- int|30|
+|Integer Literal- unsigned int|30u|
+|Integer Literal- long|30l|
+|Integer Literal- unsigned long|30ul|
 |Float point Literal|53.0f, 79.02|
 |Character literals| 'a', '1'|
 |String literals| "OneCompiler", "Foo"|
@@ -120,6 +133,8 @@ s.length();
 |\0 | Null character|
 |\b	|Back space|
 |\a	| Audible Bell|
+|\ooo | Octal|
+|\xhhh | Hexadecimal|
 
 ## Operators
 
@@ -134,6 +149,16 @@ s.length();
 | sizeof operator| sizeof() |
 | Scope Resolution Operator| :: (used to reference the global variable or member function that is out of scope.) |
 
+## Operator Precedence and Associativity
+
+| Category | Operator | Associativity |
+|----|----|----|
+| Postfix|() [] -> . ++ - - | Left to right|
+| Unary| + - ! ~ ++ - - (type)* & sizeof| Right to left|
+| Multiplicative| * / % | Left to right|
+| Additive| + - |  Left to right|
+| Shift| << >>| Left to right|
+| Relational| < <= > >= | Left to right|
 
 ## Keywords(reserved words)
 
@@ -149,6 +174,7 @@ do           if          static     while
 try 	     catch	 throw	    asm
 operator     new	 template   this
 public 	     private     protected  inline	
+alignas      namespace   template   bool
 ```
 
 
@@ -269,6 +295,32 @@ int x = 10, *ptr;
 ptr = &x; // valid because &x and ptr are addresses
 *ptr = x; // valid because both x and *ptr values 
 ```
+## References
+
+When a vairable is declared as a reference , it becomes an alternative name for an existing vairable.
+
+```c
+datatype& reference_name;
+```
+### Example
+```c
+#include <iostream>
+using namespace std;
+
+int main(){
+
+    int x = 10;
+    cout<< x ;   // Output is 10.
+    
+    int& xref = x;   // xref is a reference to x.
+
+    xref = 20;  // value of x is modified to 20 using xref reference.
+    cout<< x ;  // Output is 20 ;
+
+    return 0;
+}
+```
+
 ## Structures
 
 Structure is a user-defined data type where it allows you to combine data of different data types.
@@ -382,6 +434,17 @@ or we can for 3d vector like
 ```c
 vector<vector<vector<int>>> v3;
 ```
+Here are some useful vector functions you might need with short descriptions of each of them:  
+ | Title | Description |
+ --------|---------------
+|size()      | Returns the size of the vector (1-based indexing)  
+|front()     | Returns the first element of the vector  
+|back()      | Returns the last element of the vector(Useful when you don't know the vector size)
+|push_back() | Add element at the end of vector  
+|pop_back()  | Delete element from the end of vector  
+|insert()    | Insert any element at any position of your choice (You need to pass the position first as an iterator and then the element)  
+|erase()     | Remove elements from vector (You can either pass a single iterator denoting the position of the element to be erased or two iterators denoting the range in which you want all elements to be erased)
+
 ## Stacks 
 
 Stacks are a type of container adaptors with LIFO(Last In First Out) type of working, where a new element is added at one end (top) and an element is removed from that end only.
@@ -589,3 +652,6 @@ sort(v.rbegin(),v.rend()); // This will also sort the vector in a descending ord
 |#include<time.h>    | It is used to perform functions related to date() and time|
 |#include<graphics.h> | It is used include and facilitate graphical operations in program|
 |#include<bits/stdc++.h> | It is used to include all the standard library files, this is called a NON-STANDARD header file (it can't be compiled on a compiler other than GCC)|
+|#include<limits.h>| The macros in this header stores the values of variables in various data types|
+|#include<setjmp.h>| It contains function prototypes for functions that allow bypassing of the normal function call and return sequence|
+|#include<assert.h>| It contains information for adding diagnostics that helps in program debugging|
